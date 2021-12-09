@@ -2,6 +2,7 @@ package com.filemanager.manager;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
@@ -12,7 +13,7 @@ import javafx.stage.Stage;
 import java.util.Map;
 
 /**
- *菜单项工厂
+ * 菜单项工厂
  * 生成所需用到的各种菜单选项
  */
 public class MenuItemBuilder {
@@ -57,9 +58,12 @@ public class MenuItemBuilder {
 //                Button saveButton = buttonBuilder.getSaveButtonCreateFile(stage, textField);
                     Button cancelButton = buttonBuilder.getCancelButton(stage);
                     buttonBox.getChildren().addAll(saveButton, cancelButton);
+                    buttonBox.setSpacing(50);
+                    buttonBox.setAlignment(Pos.CENTER);
 
                     VBox vBox = new VBox();
                     vBox.getChildren().addAll(dirNameBox, buttonBox);
+                    vBox.setSpacing(5);
                     Scene scene = new Scene(vBox);
                     stage.setScene(scene);
                     stage.show();
@@ -102,10 +106,13 @@ public class MenuItemBuilder {
                     Button saveButton = buttonBuilder.getSaveButtonCreateFile(stage, textField);
                     Button cancelButton = buttonBuilder.getCancelButton(stage);
                     buttonBox.getChildren().addAll(saveButton, cancelButton);
+                    buttonBox.setSpacing(50);
+                    buttonBox.setAlignment(Pos.CENTER);
 
                     //组装面板
                     VBox vBox = new VBox();
                     vBox.getChildren().addAll(fileNameBox, buttonBox);
+                    vBox.setSpacing(5);
                     Scene scene = new Scene(vBox);
                     stage.setScene(scene);
                     stage.show();
@@ -193,6 +200,8 @@ public class MenuItemBuilder {
                 Button saveButton = buttonBuilder.getSaveButtonForEditFile(stage, fileData, textArea);
                 Button cancelButton = buttonBuilder.getCancelButton(stage);
                 hBox.getChildren().addAll(saveButton, cancelButton);
+                hBox.setSpacing(50);
+                hBox.setAlignment(Pos.CENTER);
 
                 BorderPane borderPane = new BorderPane();
                 borderPane.setCenter(textArea);

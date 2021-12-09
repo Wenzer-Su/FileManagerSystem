@@ -52,9 +52,14 @@ public class ContextMenuBuilder {
         //“添加文件”选项
         MenuItem addFileItem = menuItemBuilder.getAddFileItem();
         //“删除目录”选项
-        MenuItem deleteFileItem = menuItemBuilder.getDeleteFileItem();
+        MenuItem deleteDirItem = menuItemBuilder.getDeleteDirItem();
+//        MenuItem deleteFileItem = menuItemBuilder.getDeleteFileItem();
         //组装菜单
-        contextMenu.getItems().addAll(addDirItem, addFileItem, deleteFileItem);
+//        contextMenu.getItems().addAll(addDirItem, addDirItem, deleteDirItem);
+//        contextMenu.getItems().addAll(addDirItem, addFileItem, deleteFileItem);
+        contextMenu.getItems().add(addDirItem);
+        contextMenu.getItems().add(addFileItem);
+        contextMenu.getItems().add(deleteDirItem);
         return contextMenu;
     }
 
